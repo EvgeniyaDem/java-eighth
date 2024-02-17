@@ -1,17 +1,17 @@
 package ru.netology.service;
 public class SalesService {
 
-    public int getSumSales(int[] sales) {
-        int SumSales = 0;
+    public long getSumSales(long[] sales) {
+        long SumSales = 0;
         for (int month = 0; month < sales.length; month++) {
             SumSales = SumSales + sales[month];
         }
         return SumSales;
     }
 
-    public int getAverageSales(int[] sales) {
-        int SumSales = 0;
-        int AverageSales = 0;
+    public long getAverageSales(long[] sales) {
+        long SumSales = 0;
+        long AverageSales = 0;
         for (int month = 0; month < sales.length; month++) {
             SumSales = SumSales + sales[month];
         }
@@ -19,7 +19,7 @@ public class SalesService {
         return AverageSales;
     }
 
-    public int getMaxMonth(int[] sales) {
+    public int getMaxMonth(long[] sales) {
         int maxMonth = 0;
         for (int month = 0; month < sales.length; month++) {
             if (sales[month] >= sales[maxMonth]) {
@@ -29,7 +29,7 @@ public class SalesService {
         return maxMonth + 1;
     }
 
-    public int getMinMonth(int[] sales) {
+    public int getMinMonth(long[] sales) {
         int minMonth = 0;
         for (int month = 0; month < sales.length; month++) {
             if (sales[month] <= sales[minMonth]) {
@@ -39,10 +39,10 @@ public class SalesService {
         return minMonth + 1;
     }
 
-    public int getCountMonthSalesBelowAverage(int[] sales) {
+    public int getCountMonthSalesBelowAverage(long[] sales) {
         int cntMonthBelowAverage = 0;
-        int SumSales = 0;
-        int AverageSales = 0;
+        long SumSales = 0;
+        long AverageSales = 0;
         for (int month = 0; month < sales.length; month++) {
             SumSales = SumSales + sales[month];
         }
@@ -56,10 +56,10 @@ public class SalesService {
         return cntMonthBelowAverage;
     }
 
-    public int getCountMonthSalesAboveAverage(int[] sales) {
+    public int getCountMonthSalesAboveAverage(long[] sales) {
         int cntMonthAboveAverage = 0;
-        int SumSales = 0;
-        int AverageSales = 0;
+        long SumSales = 0;
+        long AverageSales = 0;
         for (int month = 0; month < sales.length; month++) {
             SumSales = SumSales + sales[month];
         }
