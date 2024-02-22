@@ -10,12 +10,8 @@ public class SalesService {
     }
 
     public long getAverageSales(long[] sales) {
-        long SumSales = 0;
         long AverageSales = 0;
-        for (int month = 0; month < sales.length; month++) {
-            SumSales = SumSales + sales[month];
-        }
-        AverageSales = SumSales/sales.length;
+        AverageSales = getSumSales(sales)/sales.length;
         return AverageSales;
     }
 
@@ -41,15 +37,8 @@ public class SalesService {
 
     public int getCountMonthSalesBelowAverage(long[] sales) {
         int cntMonthBelowAverage = 0;
-        long SumSales = 0;
-        long AverageSales = 0;
         for (int month = 0; month < sales.length; month++) {
-            SumSales = SumSales + sales[month];
-        }
-        AverageSales = SumSales/sales.length;
-
-        for (int month = 0; month < sales.length; month++) {
-            if (sales[month] < AverageSales) {
+            if (sales[month] < getAverageSales(sales)) {
                 cntMonthBelowAverage = cntMonthBelowAverage + 1;
             }
         }
@@ -58,15 +47,8 @@ public class SalesService {
 
     public int getCountMonthSalesAboveAverage(long[] sales) {
         int cntMonthAboveAverage = 0;
-        long SumSales = 0;
-        long AverageSales = 0;
         for (int month = 0; month < sales.length; month++) {
-            SumSales = SumSales + sales[month];
-        }
-        AverageSales = SumSales/sales.length;
-
-        for (int month = 0; month < sales.length; month++) {
-            if (sales[month] > AverageSales) {
+            if (sales[month] > getAverageSales(sales)) {
                 cntMonthAboveAverage = cntMonthAboveAverage + 1;
             }
         }
