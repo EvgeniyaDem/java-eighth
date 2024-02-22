@@ -2,17 +2,17 @@ package ru.netology.service;
 public class SalesService {
 
     public long getSumSales(long[] sales) {
-        long SumSales = 0;
+        long sumSales = 0;
         for (int month = 0; month < sales.length; month++) {
-            SumSales = SumSales + sales[month];
+            sumSales = sumSales + sales[month];
         }
-        return SumSales;
+        return sumSales;
     }
 
     public long getAverageSales(long[] sales) {
-        long AverageSales = 0;
-        AverageSales = getSumSales(sales)/sales.length;
-        return AverageSales;
+        long averageSales = 0;
+        averageSales = getSumSales(sales) / sales.length;
+        return averageSales;
     }
 
     public int getMaxMonth(long[] sales) {
